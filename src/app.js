@@ -15,40 +15,61 @@ export class App extends React.Component {
     this.setState({ collapsed });
   };
 
+  get menuContent() {
+    return [
+      {
+        id: 1,
+        title: "Topic 1"
+      },
+      {
+        id: 2,
+        title: "Topic 2"
+      },
+      {
+        id: 3,
+        title: "Topic 3"
+      }
+    ];
+  }
+
+  getMenu = data => {
+    return (
+      <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+        {data.map(item => {
+          return (
+            <Menu.Item key={item.id}>
+              <Icon type="project" />
+              <span>{item.title}</span>
+            </Menu.Item>
+          );
+        })}
+      </Menu>
+    );
+  };
+
   render() {
     return (
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout>
         <Sider
           collapsible
           collapsed={this.state.collapsed}
           onCollapse={this.onCollapse}
         >
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-            <Menu.Item key="1">
-              <Icon type="project" />
-              <span>Option 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="project" />
-              <span>Option 2</span>
-            </Menu.Item>
-          </Menu>
+          {this.getMenu(this.menuContent)}
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: 0 }}>
-            React Size Aware Components
+          <Header className="header">
+            <strong>React Size Aware Components</strong>
           </Header>
-          <Content style={{ margin: "0 16px" }}>
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+          <Content>
+            <Breadcrumb>
+              <Breadcrumb.Item>
+                <strong>Option 1</strong>
+              </Breadcrumb.Item>
             </Breadcrumb>
-            <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-              Empty Space
-            </div>
+            <div className="workplace-area">Empty Space</div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
+          <Footer>
             Measurement of React Components ©2019 Created by Witold Mętel
             (SoftServe)
           </Footer>
