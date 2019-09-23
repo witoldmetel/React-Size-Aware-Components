@@ -18,7 +18,8 @@
     "less": "^3.10.3",
     "parcel-plugin-less-js-enabled": "^1.0.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
