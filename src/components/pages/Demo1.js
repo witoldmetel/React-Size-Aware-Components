@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Card, Button } from "antd";
+import faker from "faker";
 
 import { AppContent } from "../AppContent";
 
 import "./Demo1.less";
 
 export class Demo1 extends Component {
-  state = { size: {}, isSizeChange: false };
+  state = {
+    size: {},
+    isSizeChange: false,
+    cardData: this.fakeData
+  };
 
   componentDidUpdate() {
     if (this.state.isSizeChange) {
@@ -22,13 +27,16 @@ export class Demo1 extends Component {
     }
   };
 
+  get fakeData() {
+    return faker.lorem.paragraphs(Math.random() * 10);
+  }
+
   getSize = size => {
     this.setState({ size });
   };
 
   onResize = () => {
-    this.setState({ isSizeChange: true });
-    console.log(this.state.size);
+    this.setState({ isSizeChange: true, cardData: this.fakeData });
   };
 
   get resizeButton() {
@@ -46,11 +54,16 @@ export class Demo1 extends Component {
 
   get content() {
     return (
-      <div className="demo-card" ref={this.refCallback}>
-        <Card title="Size Aware Component" extra={this.resizeButton}>
-          <p>{`width: ${this.state.size.width} px`}</p>
-          <p>{`height: ${this.state.size.height} px`}</p>
-        </Card>
+      <div className="content">
+        <div className="demo-card" ref={this.refCallback}>
+          <Card title="Resize Me!" extra={this.resizeButton}>
+            <p>{this.state.cardData}</p>
+          </Card>
+        </div>
+        <div className="card-size">
+          <p>Size: </p>
+          <pre>{JSON.stringify(this.state.size, null, 2)}</pre>
+        </div>
       </div>
     );
   }
