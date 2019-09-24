@@ -12,7 +12,7 @@ export class AppContent extends Component {
             <strong>{this.props.title}</strong>
           </Breadcrumb.Item>
         </Breadcrumb>
-        <div className="workplace-area">Empty Space</div>
+        <div className="workplace-area">{this.props.content}</div>
       </Content>
     );
   }

@@ -1,5 +1,5 @@
 import { AppContent } from "./AppContent";
-import { Topic1 } from "./Topic1";
-import { Topic2 } from "./Topic2";
+import { Demo1 } from "./pages/Demo1";
+import { Demo2 } from "./pages/Demo2";
 
-export { AppContent, Topic1, Topic2 };
+export { AppContent, Demo1, Demo2 };

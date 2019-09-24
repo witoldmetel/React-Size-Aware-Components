@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Layout, Menu, Icon } from "antd";
 
-import { Topic1, Topic2 } from "./components/index";
+import { Demo1, Demo2 } from "./components/index";
 
 const { Header, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -22,11 +22,11 @@ export class App extends React.Component {
     return [
       {
         id: 1,
-        title: "Topic 1"
+        title: "Demo 1"
       },
       {
         id: 2,
-        title: "Topic 2"
+        title: "Demo 2"
       }
     ];
   }
@@ -59,7 +59,7 @@ export class App extends React.Component {
         {data.map(item => {
           return (
             <Menu.Item key={item.id}>
-              <Link to={`/topic${item.id}`}>
+              <Link to={`/demo${item.id}`}>
                 <Icon type="project" />
                 <span>{item.title}</span>
               </Link>
@@ -70,7 +70,7 @@ export class App extends React.Component {
           title={
             <React.Fragment>
               <Icon type="project" />
-              <span>Topic 3</span>
+              <span>Demo 3</span>
             </React.Fragment>
           }
         >
@@ -97,8 +97,8 @@ export class App extends React.Component {
             <Header className="header">
               <strong>React Size Aware Components</strong>
             </Header>
-            <Route path="/topic1" exact component={Topic1} />
-            <Route path="/topic2" component={Topic2} />
+            <Route path="/demo1" exact component={Demo1} />
+            <Route path="/demo2" component={Demo2} />
             <Footer>
               Measurement of React Components ©2019 Created by Witold Mętel
               (SoftServe)
