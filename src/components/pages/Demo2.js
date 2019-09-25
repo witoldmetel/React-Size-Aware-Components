@@ -37,20 +37,21 @@ export class Demo2 extends Component {
   get content() {
     return (
       <div className="content">
+        <div className="card-size">
+          <strong>contentRect</strong>
+          <p>Size: </p>
+          <pre>{JSON.stringify(this.state.size, null, 2)}</pre>
+        </div>
         <div className="second demo-card" ref={this.refCallback}>
           <Card title="Resize Me!">
             <p>{this.state.cardData}</p>
           </Card>
-        </div>
-        <div className="card-size">
-          <p>Size: </p>
-          <pre>{JSON.stringify(this.state.size, null, 2)}</pre>
         </div>
       </div>
     );
   }
 
   render() {
-    return <AppContent title="Demo 2" content={this.content} />;
+    return <AppContent title="Resize Observer" content={this.content} />;
   }
 }

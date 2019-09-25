@@ -74,9 +74,15 @@ export class App extends React.Component {
             </React.Fragment>
           }
         >
-          <Menu.Item key="3">Option 1</Menu.Item>
-          <Menu.Item key="4">Option 2</Menu.Item>
-          <Menu.Item key="5">Option 3</Menu.Item>
+          {this.subMenuContent.map(item => {
+            return (
+              <Menu.Item key={item.id}>
+                <Link to={`/demo${item.id}`}>
+                  <span>{item.title}</span>
+                </Link>
+              </Menu.Item>
+            );
+          })}
         </SubMenu>
       </Menu>
     );

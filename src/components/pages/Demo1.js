@@ -53,20 +53,26 @@ export class Demo1 extends Component {
   get content() {
     return (
       <div className="content">
+        <div className="card-size">
+          <strong>getBoundingClientRect()</strong>
+          <p>Size:</p>
+          <pre>{JSON.stringify(this.state.size, null, 2)}</pre>
+        </div>
         <div className="first demo-card" ref={this.refCallback}>
           <Card title="Resize Me!" extra={this.resizeButton}>
             <p>{this.state.cardData}</p>
           </Card>
-        </div>
-        <div className="card-size">
-          <p>Size: </p>
-          <pre>{JSON.stringify(this.state.size, null, 2)}</pre>
         </div>
       </div>
     );
   }
 
   render() {
-    return <AppContent title="Demo 1" content={this.content} />;
+    return (
+      <AppContent
+        title="Measure React component size with ref callbacks"
+        content={this.content}
+      />
+    );
   }
 }
