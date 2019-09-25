@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Layout, Menu, Icon } from "antd";
 
-import { Demo1, Demo2 } from "./components/index";
+import { Demo1, Demo2, Demo3, Demo4, Demo5 } from "./components/index";
 
 const { Header, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -105,6 +105,9 @@ export class App extends React.Component {
             </Header>
             <Route path="/demo1" exact component={Demo1} />
             <Route path="/demo2" component={Demo2} />
+            <Route path="/demo3" component={Demo3} />
+            <Route path="/demo4" component={Demo4} />
+            <Route path="/demo5" component={Demo5} />
             <Footer>
               Measurement of React Components ©2019 Created by Witold Mętel
               (SoftServe)
