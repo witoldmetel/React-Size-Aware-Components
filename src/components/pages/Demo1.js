@@ -4,8 +4,6 @@ import faker from "faker";
 
 import { AppContent } from "../AppContent";
 
-import "./Demo1.less";
-
 export class Demo1 extends Component {
   state = {
     size: {},
