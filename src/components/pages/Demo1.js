@@ -53,7 +53,7 @@ export class Demo1 extends Component {
   get content() {
     return (
       <div className="content">
-        <div className="demo-card" ref={this.refCallback}>
+        <div className="first demo-card" ref={this.refCallback}>
           <Card title="Resize Me!" extra={this.resizeButton}>
             <p>{this.state.cardData}</p>
           </Card>
