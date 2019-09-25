@@ -70,7 +70,7 @@ export class Demo1 extends Component {
   render() {
     return (
       <AppContent
-        title="Measure React component size with ref callbacks"
+        title="React component measurement using callback ref"
         content={this.content}
       />
     );
