@@ -11,6 +11,18 @@ export class Demo1 extends Component {
     cardData: this.fakeData
   };
 
+  // constructor(props) {
+  //   super(props);
+
+  //   this.elementRef = React.createRef();
+  // }
+
+  // componentDidMount() {
+  //   this.getSize(this.elementRef.current.getBoundingClientRect());
+  //   this.setState({ isSizeChange: false });
+  // }
+
+  // ref callbacks
   componentDidUpdate() {
     if (this.state.isSizeChange) {
       this.getSize(this.elementRef.getBoundingClientRect());
@@ -70,7 +82,7 @@ export class Demo1 extends Component {
   render() {
     return (
       <AppContent
-        title="React component measurement using callback ref"
+        title="React component measurement using createRef / callback ref"
         content={this.content}
       />
     );
