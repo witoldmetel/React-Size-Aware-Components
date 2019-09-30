@@ -40,10 +40,6 @@ export class App extends React.Component {
       {
         id: 4,
         title: "Option 2"
-      },
-      {
-        id: 5,
-        title: "Option 3"
       }
     ];
   }
@@ -107,7 +103,6 @@ export class App extends React.Component {
             <Route path="/demo2" component={Demo2} />
             <Route path="/demo3" component={Demo3} />
             <Route path="/demo4" component={Demo4} />
-            <Route path="/demo5" component={Demo5} />
             <Footer>
               Measurement of React Components ©2019 Created by Witold Mętel
               (SoftServe)
