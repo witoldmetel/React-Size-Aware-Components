@@ -23,6 +23,7 @@ export class Demo3 extends Component {
     return (
       <SizeMe
         monitorHeight
+        monitorWidth
         refreshRate={32}
         render={({ size }) => (
           <div className="content">
@@ -30,7 +31,7 @@ export class Demo3 extends Component {
               <p>Size: </p>
               <pre>{JSON.stringify(size, null, 2)}</pre>
             </div>
-            <div className="second demo-card" ref={this.refCallback}>
+            <div className="second demo-card">
               <Card title="Resize Me!">{this.fakeData}</Card>
             </div>
           </div>
